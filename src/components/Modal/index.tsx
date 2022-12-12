@@ -1,16 +1,11 @@
 import { createRef, useContext, useEffect } from 'react'
 import { ModalContext } from '../../contexts/ModalContext'
-import { LoaderContext } from '../../contexts/Loader'
-import api from '../../utils/api'
-import { errorToast } from '../../utils/errorToast'
-import { successToast } from '../../utils/successToast'
 
 interface IProps {}
 
 const Modal = ({}: IProps) => {
     const modalRef = createRef<HTMLDivElement>()
     const { setIsModalOpen } = useContext(ModalContext)
-    const { setIsLoading } = useContext(LoaderContext)
 
     useEffect(() => {
         const handleOnClick = (event: MouseEvent) => {
@@ -26,25 +21,12 @@ const Modal = ({}: IProps) => {
         }
     }, [])
 
-    const handle = (): void => {
-        setIsLoading(true)
-
-        api.post('/')
-        .then((response) => {
-            setIsModalOpen(false)
-            successToast(response.data.message)
-        })
-        .catch((error) => {
-            errorToast(`${error?.response?.data?.message}!` || 'Something goes wrong, please try again!')
-        })
-        .finally(() => {
-            setIsLoading(false)
-        })
-    }
-
     return(
-        <>
-        </>
+        <div className='w-full h-screen fixed bg-[#00000080]'>
+            <section className='w-[721px] bg-white'>
+
+            </section>
+        </div>
     )
 }
 
