@@ -6,17 +6,14 @@ module.exports = {
     ],
     theme: {
     colors: {
-            backgroundColor: '#333333',
-            boxColor: '#434343',
-            primaryColor: '#ffffff',
-            inputBackground: '#373737',
-            buttonText: '#000000',
-            placeholderColor: '#E1E1E1',
-            negative: '#DD4B4B',
-            positive: '#45AA34'
+            black: '#000000',
+            white: '#FFFFFF',
+            green: '#4AC959',
+            orange: '#E88D39'
         },
         fontFamily: {
-            inter: ["Inter", "ui-monospace", "SFMono-Regular"]
+            montserrat: ["Montserrat", "ui-monospace", "SFMono-Regular"],
+            poppins: ["Poppins", "ui-monospace", "SFMono-Regular"]
         },
         fontSize: {
             title1: "2.0rem",
@@ -25,7 +22,7 @@ module.exports = {
             headline2: "0.875rem",
             placeholder: "1rem",
         },
-            fontWeight: {
+        fontWeight: {
             bold: "700",
             semibold: "600",
             medium: "500",
